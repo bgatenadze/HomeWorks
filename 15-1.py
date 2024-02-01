@@ -10,3 +10,5 @@ print ("Hi")
 # git log
 # git remote add origin "aq githubis folderis linki"
 # git push origin master
+
+print("HI")

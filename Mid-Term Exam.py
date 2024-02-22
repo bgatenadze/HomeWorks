@@ -1,6 +1,5 @@
-# შუალედური პროექტი
+# შუალედური პროექტი + Readme (ინსტრუქცია)
 
-import math
 
 class Calculator:
     def __init__(self, num1, num2):
@@ -26,10 +25,12 @@ class Calculator:
         return self.num1 ** self.num2
 
     def root(self):
-        if self.num1 >= 0 and self.num2 != 0:
+        if self.num1 >= 0 or self.num2 % 2 != 0:
             return self.num1 ** (1 / self.num2)
+        elif self.num1 < 0 and self.num2 % 2 == 1:
+            return -abs(self.num1) ** (1 / self.num2)
         else:
-            return "Error: Cannot calculate root for negative number or root with exponent 0"
+            raise ValueError("Error: Cannot calculate the root with negative base and even exponent")
 
     def perform_operation(self, operation):
         if operation == 'add':

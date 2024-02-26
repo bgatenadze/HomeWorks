@@ -50,14 +50,19 @@ class Calculator:
 
 
 # Example usage:
-num1 = float(input("Enter the first number: "))
-num2 = float(input("Enter the second number: "))
-operation = input("Enter the operation (add, subtract, multiply, divide, power, root): ")
+while True:
+    answer = input("do you want to quit? ")
+    if answer == "quit":
+        break
+    
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operation = input("Enter the operation (add, subtract, multiply, divide, power, root): ")
 
-calculator_instance = Calculator(num1, num2)
-result = calculator_instance.perform_operation(operation)
-print(f"Result: {result}")
+    calculator_instance = Calculator(num1, num2)
+    result = calculator_instance.perform_operation(operation)
+    print(f"Result: {result}")
 
-# Writing result to file
-with open("calculator_results.txt", "a") as file:
-    file.write(f"{num1} {operation} {num2} = {result}\n")
+    # Writing result to file
+    with open("calculator_results.txt", "a") as file:
+        file.write(f"{num1} {operation} {num2} = {result}\n")
